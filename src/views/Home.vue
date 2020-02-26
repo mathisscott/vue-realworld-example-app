@@ -47,8 +47,19 @@
           <div class="sidebar">
             <p>Popular Tags</p>
             <div class="tag-list">
-              <RwvTag v-for="(tag, index) in tags" :name="tag" :key="index">
-              </RwvTag>
+              <!-- <RwvTag v-for="(tag, index) in tags" :name="tag" :key="index">
+              </RwvTag> -->
+              <cwc-tag
+                v-for="(tag, index) in tags"
+                v-bind:key="tag.id"
+                v-bind:tag="tag"
+                v-bind:index="index"
+              >
+                {{ tag }}
+              </cwc-tag>
+              <div style="margin-top: 0.8rem">
+                <cwc-button>OHAI</cwc-button>
+              </div>
             </div>
           </div>
         </div>
@@ -61,6 +72,9 @@
 import { mapGetters } from "vuex";
 import RwvTag from "@/components/VTag";
 import { FETCH_TAGS } from "@/store/actions.type";
+
+import "@clr/core/button";
+import "@clr/core/tag";
 
 export default {
   name: "home",
