@@ -4,7 +4,14 @@ module.exports = {
       presets: ["@vue/app"]
     },
     test: {
-      presets: ["@babel/preset-env"]
+      presets: [
+        "@babel/preset-env",
+        {
+          targets: {
+            esmodules: true
+          }
+        }
+      ]
     }
   }
 };

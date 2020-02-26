@@ -4,7 +4,8 @@ module.exports = {
     "^.+\\.vue$": "vue-jest",
     ".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$":
       "jest-transform-stub",
-    "^.+\\.(js|jsx)?$": "babel-jest"
+    "^.+\\.(js|jsx)?$": "babel-jest",
+    "^.+\\.ts?$": "ts-jest"
   },
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/src/$1"
@@ -14,5 +15,5 @@ module.exports = {
     "<rootDir>/(tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx))"
   ],
   testURL: "http://localhost/",
-  transformIgnorePatterns: ["<rootDir>/node_modules/"]
+  transformIgnorePatterns: ["<rootDir>/node_modules/?!(@clr)"]
 };
